@@ -58,7 +58,7 @@ app.post('/login', (req, res) => {
 });
 
 // Rota restrita
-app.get('/retricted', (req, res) => {
+app.get('/restricted', (req, res) => {
     const user = req.cookies.currentUser;
     if(!user || !users[user]){
         return res.redirect("/");
