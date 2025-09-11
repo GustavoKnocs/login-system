@@ -30,7 +30,7 @@ function buildUserScreen(userName){
 app.get('/', (req, res) => {
     const user = req.cookies.currentUser;
     if (user && users[user]){
-        return res.redirect("/retricted"); 
+        return res.redirect("/restricted"); 
     }
     res.sendFile(path.join(__dirname, "public", "login.html"))
 });
@@ -47,7 +47,7 @@ app.post('/login', (req, res) => {
         else{
             res.cookie("currentUser", login);
         }
-        return res.redirect("/retricted");
+        return res.redirect("/restricted");
     }
     else{
         return res.status(401).send(`
